@@ -7,4 +7,3 @@ def uppercase(str):
             temp = temp - 32
         print("{}".format(chr(temp)), end='')
     print()
-uppercase("string")
