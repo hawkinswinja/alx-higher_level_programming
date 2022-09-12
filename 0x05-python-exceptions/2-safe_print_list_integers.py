@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def safe_print_list_integers(my_list=[], x=0):
     n = 0
-    while my_list:
+    if my_list:
         for i in range(0, x):
             try:
                 print("{:d}".format(my_list[i]), end='')
@@ -9,4 +9,4 @@ def safe_print_list_integers(my_list=[], x=0):
             except (TypeError, ValueError):
                 pass
         print("")
-        return (n)
+    return (n)
