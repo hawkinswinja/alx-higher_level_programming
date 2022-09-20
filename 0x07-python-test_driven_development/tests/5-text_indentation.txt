@@ -1,0 +1,9 @@
+'''text_indentation''' module
+This function replaces :.? with nextline character
+usage: text_indentation(text)
+text can be a string of any length
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation(10)
+Traceback (most recent call last):
+TypeError: text must be a string

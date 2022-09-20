@@ -1,0 +1,33 @@
+'''0-add_integer''' module
+
+usage: add_integer(...)
+Returns the sum of values a and b
+b defaults to 98 if it is not provided
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(2, 3)
+5
+>>> add_integer(2)
+100
+
+add_integer of floats works as the values are initially typecast into integers
+>>> add_integer(2.52, 3.5)
+5
+
+for non-integer or non float values it raises an error
+>>> add_integer(None, 'school')
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+The function fails if infinity or NaN is provided as a value
+>>> add_integer(2, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+The function takes a maximum of two values a and b
+>>> add_integer(2, 3, 5)
+Traceback (most recent call last):
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
