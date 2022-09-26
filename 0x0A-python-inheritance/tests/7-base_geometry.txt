@@ -1,0 +1,24 @@
+'''7-base_geometry'''
+contains two functions
+area() raises an exception message
+integer_validator(name, value) validates value as integer greater than 0
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+ValueError: width must be greater than 0
+>>> bg.integer_validator("my_int", -2)
+Traceback (most recent call last):
+ValueError: my_int must be greater than 0
+>>> bg.integer_validator("my_int", 13.52)
+Traceback (most recent call last):
+TypeError: my_int must be an integer
+>>> bg.integer_validator("my_int", "john")
+Traceback (most recent call last):
+TypeError: my_int must be an integer
+>>> bg.integer_validator("width", float("inf"))
+Traceback (most recent call last):
+TypeError: width must be an integer
+
