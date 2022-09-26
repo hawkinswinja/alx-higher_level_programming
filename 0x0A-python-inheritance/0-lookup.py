@@ -9,4 +9,4 @@ def lookup(obj):
        @args:
             obj(object of any type)
     """
-    return (list(obj.__dict__))
+    return (list(dir(obj)))
