@@ -9,5 +9,5 @@ def load_from_json_file(filename):
             filename(name of file)
     """
     with open(filename, 'r', encoding='utf-8') as f:
-       x = json.load(f)
+        x = json.load(f)
     return x
