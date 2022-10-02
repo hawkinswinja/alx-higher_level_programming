@@ -50,3 +50,9 @@ class Square(Rectangle):
             self.__size = mydict.get("size")
             self.__x = dict2.get("x")
             self.__y = dict2.get("y")
+
+    def to_dictionary(self):
+        """returns the dictionary rep instance"""
+        mydict = {"x": self.__x, "y": self.__y,
+                  "id": self.id, "size": self.__size}
+        return mydict

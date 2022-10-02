@@ -129,3 +129,9 @@ class Rectangle(Base):
             self.__height = mydict2.get("height")
             self.__x = mydict2.get("x")
             self.__y = mydict2.get("y")
+
+    def to_dictionary(self):
+        """returns the dictionary rep of instance"""
+        mydict = {"x": self.__x, "y": self.__y, "id": self.id,
+                  "height": self.__height, "width": self.__width}
+        return mydict
