@@ -2,7 +2,6 @@
 """test cases for square instances"""
 import unittest
 from models.square import Square
-from models.rectangle import Rectangle
 from models.base import Base
 
 
@@ -20,12 +19,12 @@ class TestRectangle(unittest.TestCase):
     def test_selfid(self):
         """tests for id creation without args for id"""
         s2 = Square(10)
-        self.assertFalse(s2.id == None)
+        self.assertFalse(s2.id is None)
 
     def test_idincrement(self):
         """self increment for instances without id"""
         sq1 = Square(4)
-        self.assertFalse(sq1.id == None)
+        self.assertFalse(sq1.id is None)
         sq2 = Square(10)
         self.assertEqual(sq2.id, sq1.id + 1)
 
