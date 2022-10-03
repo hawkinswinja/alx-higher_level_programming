@@ -21,7 +21,7 @@ class Square(Rectangle):
         self.width = value
         self.height = value
         self.__size = value
-		
+
     def __str__(self):
         """returns the description of the square"""
         x = str(self.x) + "/"
@@ -56,5 +56,3 @@ class Square(Rectangle):
         mydict = {"x": self.x, "y": self.y,
                   "id": self.id, "size": self.size}
         return mydict
-	
-
