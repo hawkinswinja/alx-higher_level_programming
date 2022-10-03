@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """square module that inherits from rectangle"""
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -9,8 +9,6 @@ class Square(Rectangle):
         """initialize the dimensions of the square and instance id"""
         super().__init__(size, size, x, y, id)
         self.__size = size
-        self.__x = x
-        self.__y = y
 
     @property
     def size(self):
@@ -20,12 +18,14 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """update the value of size"""
-        Rectangle(value, value, self.__x, self.__y, self.id)
-
+        self.width = value
+        self.height = value
+        self.__size = value
+		
     def __str__(self):
         """returns the description of the square"""
-        x = str(self.__x) + "/"
-        y = str(self.__y) + " - "
+        x = str(self.x) + "/"
+        y = str(self.y) + " - "
         size = str(self.__size)
         iid = " (" + str(self.id) + ") "
         return "[Square]" + iid + x + y + size
@@ -42,8 +42,8 @@ class Square(Rectangle):
         if n > 3:
             self.__y = args[3]
         if n == 0 and kwargs is not None:
-            mydict = {"id": self.id, "size": self.__size}
-            dict2 = {"x": self.__x, "y": self.__y}
+            mydict = {"id": self.id, "size": self.size}
+            dict2 = {"x": self.x, "y": self.y}
             mydict.update((k, v) for k, v in kwargs.items())
             dict2.update((k, v) for k, v in kwargs.items())
             self.id = mydict.get("id")
@@ -53,6 +53,8 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """returns the dictionary rep instance"""
-        mydict = {"x": self.__x, "y": self.__y,
-                  "id": self.id, "size": self.__size}
+        mydict = {"x": self.x, "y": self.y,
+                  "id": self.id, "size": self.size}
         return mydict
+	
+
