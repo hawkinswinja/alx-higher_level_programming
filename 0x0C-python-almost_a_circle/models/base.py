@@ -51,3 +51,15 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """load dictionary from a file and create instances for the class"""
+        filename = cls.__name__ + ".json"
+        dictlist = []
+        with open(filename, 'r') as f:
+            x = Base.from_json_string(f.read())
+        if len(x) != 0:
+            for kwargs in x:
+                dictlist.append(cls.create(**kwargs))
+        return dictlist
