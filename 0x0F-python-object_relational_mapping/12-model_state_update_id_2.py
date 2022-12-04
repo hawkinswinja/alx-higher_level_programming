@@ -12,7 +12,7 @@ if __name__ == '__main__':
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    states = session.query(State).filter(State.name.contains('a')).order_by(State.id).all()
-    for state in states:
-        print('{}: {}'.format(state.id, state.name))
+    item = session.query(State).filter(State.id == 2).first()
+    item.name = 'New Mexico'
+    session.commit()
     session.close()

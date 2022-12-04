@@ -9,7 +9,7 @@ if __name__ == '__main__':
                            passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM states\
-                   WHERE states.name LIKE 'N%'\
+                   WHERE BINARY states.name LIKE 'N%'\
                    ORDER BY states.id")
     results = cursor.fetchall()
     cursor.close()

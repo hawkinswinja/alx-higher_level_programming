@@ -9,8 +9,8 @@ if __name__ == '__main__':
                            passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM states\
-                   WHERE states.name=%s\
-                   ORDER BY states.id", (sys.argv[4],))
+                   WHERE states.name = '{:s}'\
+                   ORDER BY states.id".format(sys.argv[4]))
     results = cursor.fetchall()
     cursor.close()
     conn.close()
