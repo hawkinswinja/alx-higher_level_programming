@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 #set custom Header with value
-curl -sH "X-School-User-Id: 98" GET "$@"
+curl -sH "X-School-User-Id: 98" "$@"

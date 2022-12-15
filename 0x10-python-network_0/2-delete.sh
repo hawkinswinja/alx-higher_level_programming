@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 #send a delete request
 curl -X DELETE "$@"
