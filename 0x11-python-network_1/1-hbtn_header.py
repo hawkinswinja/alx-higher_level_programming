@@ -6,4 +6,4 @@ if __name__ == "__main__":
     url = sys.argv[1]
     with urllib.request.urlopen(url) as resp:
         headers = dict(resp.headers)
-    print(headers['X-Request-Id'])
+        print(headers['X-Request-Id'])
