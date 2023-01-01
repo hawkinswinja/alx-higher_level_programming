@@ -3,7 +3,7 @@
 if __name__ == "__main__":
     import requests
     import sys
-    if len(sys.argv < 2):
+    if len(sys.argv) < 2:
         q = ''
     q = sys.argv[1]
     response = requests.post("http://0.0.0.0:5000", data={"q": q})
