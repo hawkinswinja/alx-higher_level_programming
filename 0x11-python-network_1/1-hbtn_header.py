@@ -6,7 +6,4 @@ if __name__ == "__main__":
     url = sys.argv[1]
     with urllib.request.urlopen(url) as resp:
         headers = dict(resp.headers)
-        try:
-            print(headers['X-Request-Id'])
-        except Exception:
-            print('None')
+        print(headers.get('X-Request-Id'))

@@ -5,7 +5,6 @@ import urllib.request
 if __name__ == "__main__":
     try:
         with urllib.request.urlopen(sys.argv[1]) as response:
-            print(response.read())
+            print(response.read().decode('UTF-8'))
     except Exception as e:
-        errorcode = str(e).split()[2].split(':')[0]
-        print("Error code: {}".format(errorcode))
+        print("Error code: {}".format(e.code))
