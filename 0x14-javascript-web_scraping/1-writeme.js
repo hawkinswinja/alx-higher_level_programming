@@ -3,4 +3,4 @@ const fs = require('fs');
 // write contents to file passed as argument
 fs.writeFile(process.argv[2], process.argv[3], 'utf-8', (error) => {
   if (error) { console.log(error); }
-)};
+});
