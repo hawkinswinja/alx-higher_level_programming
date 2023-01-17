@@ -1,12 +1,6 @@
 #!/usr/bin/node
-const fs = require('fs').promises;
+const fs = require('fs');
 // write contents to file passed as argument
-async function writetofile (file, data) {
-  try {
-    await fs.writeFile(file, data, 'UTF8');
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-writetofile(process.argv[2], process.argv[3]);
+fs.writeFile(process.argv[2], process.argv[3], 'utf-8', (error) => {
+  if (error) { console.log(error); }
+)};
