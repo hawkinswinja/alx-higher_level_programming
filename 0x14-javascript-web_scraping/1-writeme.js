@@ -3,9 +3,9 @@ const fs = require('fs').promises;
 // write contents to file passed as argument
 async function writetofile (file, data) {
   try {
-    await fs.writeFile(file, data);
+    await fs.writeFile(file, data, 'UTF8');
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
 

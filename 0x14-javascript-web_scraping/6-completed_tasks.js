@@ -13,7 +13,7 @@ request(process.argv[2], function (error, response, body) {
       const mytasks = completed.filter(function (task) {
         return task.userId === userid;
       });
-      usertasks[userid.toString()] = mytasks.length;
+	  if (mytasks.length > 0) { usertasks[userid.toString()] = mytasks.length; }
     }
     console.log(usertasks);
   }

@@ -5,6 +5,6 @@ const fs = require('fs').promises;
 request.get(process.argv[2], function (error, response, body) {
   if (error) { console.log(error); }
   if (body) {
-    fs.writeFile(process.argv[3], body);
+    fs.writeFile(process.argv[3], body, 'UTF8');
   }
 });
