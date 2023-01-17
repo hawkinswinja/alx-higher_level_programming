@@ -3,7 +3,7 @@ const request = require('request');
 
 request(process.argv[2], function (error, response, body) {
   if (error) { console.log(error); }
-  if (body) {
+  if (response.statusCode === 200) {
     const movies = JSON.parse(body).results;
     let appeared = 0;
     for (let i = 0; i < movies.length; i++) {

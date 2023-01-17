@@ -10,4 +10,4 @@ async function read (file) {
   }
 }
 
-read(process.argv[2].toString());
+read(process.argv[2]);
