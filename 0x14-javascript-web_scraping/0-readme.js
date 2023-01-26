@@ -1,13 +1,6 @@
 #!/usr/bin/node
-const fs = require('fs').promises;
+const fs = require('fs');
 // read contents of file passed as argument
-async function read (file) {
-  try {
-    const data = await fs.readFile(file, 'UTF8');
-    console.log(data.toString());
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-read(process.argv[2]);
+fs.readFile(process.argv[2], 'utf-8', (error, data) => {
+  if (error) { console.log(error); } else { console.log(data); }
+});
